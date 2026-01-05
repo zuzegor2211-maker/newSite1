@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Соревнования по спортивному туризму | Обратный отсчет</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800&family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏔️</text></svg>">
+</head>
+<body>
+    <!-- Анимированный фон -->
+    <div class="background-animation">
+        <div class="mountain"></div>
+        <div class="mountain mountain-2"></div>
+        <div class="cloud"></div>
+        <div class="cloud cloud-2"></div>
+        <div class="cloud cloud-3"></div>
+    </div>
+    
+    <!-- Основной контейнер -->
+    <div class="container">
+        <!-- Заголовок -->
+        <header class="header">
+            <div class="logo">
+                <div class="logo-icon">🏔️</div>
+                <div class="logo-text">
+                    <h1>СПОРТИВНЫЙ ТУРИЗМ</h1>
+                    <p>Чемпионат по горному туризму 2026</p>
+                </div>
+            </div>
+            <div class="header-info">
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Пос. Архипо-Осиповка, Краснодарский край</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>7 февраля 2026</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Основное содержимое -->
+        <main class="main-content">
+            <!-- Баннер события -->
+            <div class="event-banner">
+                <div class="event-title">
+                    <h2><i class="fas fa-flag-checkered"></i> СТАРТ СОРЕВНОВАНИЙ</h2>
+                    <p class="event-subtitle">Открытый чемпионат по спортивному туризму</p>
+                </div>
+                <div class="event-time">
+                    <div class="time-label">НАЧАЛО В</div>
+                    <div class="time-value">10:00</div>
+                    <div class="time-zone">МСК (GMT+3)</div>
+                </div>
+            </div>
+
+            <!-- Секция обратного отсчета -->
+            <div class="countdown-section">
+                <div class="section-title">
+                    <h3><i class="fas fa-clock"></i> ОБРАТНЫЙ ОТСЧЕТ ДО СТАРТА</h3>
+                    <div class="status-badge" id="statusBadge">
+                        <i class="fas fa-spinner"></i>
+                        <span>СОРЕВНОВАНИЯ НАЧИНАЮТСЯ</span>
+                    </div>
+                </div>
+
+                <!-- Таймер -->
+                <div class="countdown-display">
+                    <div class="countdown-grid">
+                        <!-- Дни -->
+                        <div class="countdown-item">
+                            <div class="countdown-number" id="days">00</div>
+                            <div class="countdown-label">
+                                <i class="fas fa-calendar-day"></i>
+                                ДНЕЙ
+                            </div>
+                            <div class="countdown-progress">
+                                <div class="progress-fill" id="dayProgress"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="countdown-separator">:</div>
+                        
+                        <!-- Часы -->
+                        <div class="countdown-item">
+                            <div class="countdown-number" id="hours">00</div>
+                            <div class="countdown-label">
+                                <i class="fas fa-clock"></i>
+                                ЧАСОВ
+                            </div>
+                            <div class="countdown-progress">
+                                <div class="progress-fill" id="hourProgress"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="countdown-separator">:</div>
+                        
+                        <!-- Минуты -->
+                        <div class="countdown-item">
+                            <div class="countdown-number" id="minutes">00</div>
+                            <div class="countdown-label">
+                                <i class="fas fa-hourglass-half"></i>
+                                МИНУТ
+                            </div>
+                            <div class="countdown-progress">
+                                <div class="progress-fill" id="minuteProgress"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="countdown-separator">:</div>
+                        
+                        <!-- Секунды -->
+                        <div class="countdown-item">
+                            <div class="countdown-number" id="seconds">00</div>
+                            <div class="countdown-label">
+                                <i class="fas fa-running"></i>
+                                СЕКУНД
+                            </div>
+                            <div class="countdown-progress">
+                                <div class="progress-fill" id="secondProgress"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Дополнительная информация -->
+                    <div class="countdown-total">
+                        <div class="total-item">
+                            <span>Всего секунд до старта:</span>
+                            <strong id="totalSeconds">0</strong>
+                        </div>
+                        <div class="total-item">
+                            <span>Прогресс подготовки:</span>
+                            <strong id="progressPercent">0%</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Детали мероприятия -->
+            <div class="event-details">
+                <div class="details-card">
+                    <div class="card-header">
+                        <i class="fas fa-mountain"></i>
+                        <h4>ДИСЦИПЛИНЫ СОРЕВНОВАНИЙ</h4>
+                    </div>
+                    <ul class="disciplines-list">
+                        <li><i class="fas fa-hiking"></i> Горный поход (категория сложности 3)</li>
+                        <li><i class="fas fa-arrows-alt-v"></i> Техника альпинизма</li>
+                        <li><i class="fas fa-water"></i> Наведение переправ</li>
+                        <li><i class="fas fa-compass"></i> Спортивное ориентирование</li>
+                        <li><i class="fas fa-campground"></i> Организация бивака</li>
+                        <li><i class="fas fa-first-aid"></i> Первая помощь в горах</li>
+                    </ul>
+                </div>
+                
+                <div class="details-card">
+                    <div class="card-header">
+                        <i class="fas fa-trophy"></i>
+                        <h4>ПРИЗОВОЙ ФОНД</h4>
+                    </div>
+                    <div class="prize-info">
+                        <div class="prize-item">
+                            <div class="prize-place gold">🥇</div>
+                            <div class="prize-details">
+                                <div class="prize-title">ПЕРВОЕ МЕСТО</div>
+                                <div class="prize-value">500,000 ₽</div>
+                            </div>
+                        </div>
+                        <div class="prize-item">
+                            <div class="prize-place silver">🥈</div>
+                            <div class="prize-details">
+                                <div class="prize-title">ВТОРОЕ МЕСТО</div>
+                                <div class="prize-value">300,000 ₽</div>
+                            </div>
+                        </div>
+                        <div class="prize-item">
+                            <div class="prize-place bronze">🥉</div>
+                            <div class="prize-details">
+                                <div class="prize-title">ТРЕТЬЕ МЕСТО</div>
+                                <div class="prize-value">150,000 ₽</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="details-card">
+                    <div class="card-header">
+                        <i class="fas fa-users"></i>
+                        <h4>УЧАСТНИКИ</h4>
+                    </div>
+                    <div class="participants-info">
+                        <div class="participant-count">
+                            <div class="count-number">24</div>
+                            <div class="count-label">команды зарегистрировано</div>
+                        </div>
+                        <div class="participant-regions">
+                            <span class="region-tag">Москва</span>
+                            <span class="region-tag">Санкт-Петербург</span>
+                            <span class="region-tag">Краснодар</span>
+                            <span class="region-tag">Казань</span>
+                            <span class="region-tag">Екатеринбург</span>
+                            <span class="region-tag">Новосибирск</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Информация о времени -->
+            <div class="time-info">
+                <div class="current-time">
+                    <h4><i class="fas fa-globe-europe"></i> ТЕКУЩЕЕ ВРЕМЯ</h4>
+                    <div class="time-display" id="currentTime">
+                        Загрузка...
+                    </div>
+                    <div class="date-display" id="currentDate">
+                        Загрузка...
+                    </div>
+                </div>
+                <div class="target-time">
+                    <h4><i class="fas fa-bullseye"></i> ЦЕЛЕВАЯ ДАТА</h4>
+                    <div class="target-date">7 февраля 2026 года, 10:00</div>
+                    <div class="target-location">Московское время (GMT+3)</div>
+                </div>
+            </div>
+
+            <!-- Мотивационные сообщения -->
+            <div class="motivation-section">
+                <div class="motivation-card">
+                    <i class="fas fa-quote-left"></i>
+                    <p id="motivationText">Горы зовут тех, чья душа им по росту! Готовьтесь к самому захватывающему спортивному событию года.</p>
+                    <i class="fas fa-quote-right"></i>
+                </div>
+                <!-- Блок погоды с правильными ID для JavaScript -->
+                <div class="weather-info">
+                    <div class="weather-icon" id="weatherIcon">⛅</div>
+                    <div class="weather-details">
+                        <div class="weather-temp" id="weatherTemp">--°C</div>
+                        <div class="weather-condition" id="weatherCondition">Загрузка данных...</div>
+                        <div class="weather-wind">Ветер: <span id="windSpeed">--</span> м/с</div>
+                        <div class="weather-update">Обновлено: <span id="updateTime">--:--</span></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Футер -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="footer-icon">🏔️</span>
+                    <span>Спортивный туризм 2026</span>
+                </div>
+                <div class="footer-links">
+                    <a href="#"><i class="fas fa-info-circle"></i> О соревнованиях</a>
+                    <a href="#"><i class="fas fa-map"></i> Маршрут</a>
+                    <a href="#"><i class="fas fa-file-alt"></i> Регламент</a>
+                    <a href="#"><i class="fas fa-envelope"></i> Контакты</a>
+                </div>
+                <div class="footer-update">
+                    <i class="fas fa-sync-alt"></i>
+                    <span>Таймер обновляется каждую секунду</span>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                © 2026 Федерация Зузова Егора. Все права защищены!!!!
+            </div>
+        </footer>
+    </div>
+
+    <!-- Подключение скриптов ДОЛЖНО БЫТЬ ЗДЕСЬ, в самом конце body -->
+    <script src="weather.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

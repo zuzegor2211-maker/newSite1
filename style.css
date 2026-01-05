@@ -1,0 +1,862 @@
+/* style.css - Зеленый горный стиль с шрифтом Rubik */
+
+/* Подключение шрифтов */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Rubik', sans-serif;
+    background: linear-gradient(135deg, #0a2e1d 0%, #1a4a2f 50%, #0c1f14 100%);
+    color: #fff;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+    letter-spacing: 0.3px; /* Шире */
+    line-height: 1.6; /* Лучшая читаемость */
+}
+
+/* Анимированный фон */
+.background-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.mountain {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 300px;
+    background: linear-gradient(to top, #1a4a2f 0%, #2a6a3f 100%);
+    clip-path: polygon(0% 100%, 100% 100%, 100% 30%, 80% 40%, 60% 20%, 40% 50%, 20% 10%, 0% 30%);
+}
+
+.mountain-2 {
+    height: 250px;
+    background: linear-gradient(to top, #0a2e1d 0%, #1a4a2f 100%);
+    clip-path: polygon(0% 100%, 100% 100%, 100% 40%, 85% 50%, 70% 30%, 50% 60%, 30% 20%, 15% 50%, 0% 40%);
+    opacity: 0.8;
+}
+
+.cloud {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+    animation: float 20s infinite linear;
+}
+
+.cloud:nth-child(3) {
+    width: 150px;
+    height: 60px;
+    top: 20%;
+    left: 10%;
+    animation-duration: 25s;
+}
+
+.cloud:nth-child(4) {
+    width: 200px;
+    height: 80px;
+    top: 15%;
+    right: 15%;
+    animation-duration: 30s;
+    animation-delay: -10s;
+}
+
+.cloud:nth-child(5) {
+    width: 120px;
+    height: 50px;
+    top: 30%;
+    left: 30%;
+    animation-duration: 22s;
+    animation-delay: -5s;
+}
+
+@keyframes float {
+    0% { transform: translateX(-100px); }
+    100% { transform: translateX(calc(100vw + 100px)); }
+}
+
+/* Основной контейнер */
+.container {
+    max-width: 1300px; /* Шире */
+    margin: 0 auto;
+    padding: 25px; /* Больше отступов */
+    position: relative;
+    z-index: 1;
+}
+
+/* Хедер */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 0; /* Больше отступов */
+    border-bottom: 2px solid rgba(76, 175, 80, 0.4); /* Толще */
+    margin-bottom: 35px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 18px; /* Больше отступ */
+}
+
+.logo-icon {
+    font-size: 3.2rem; /* Крупнее */
+    background: linear-gradient(135deg, #4caf50 0%, #8bc34a 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.logo-text h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.3rem; /* Крупнее */
+    font-weight: 800;
+    background: linear-gradient(135deg, #fff 0%, #a8ffc1 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 2px; /* Шире */
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.logo-text p {
+    font-size: 1.1rem; /* Крупнее */
+    color: #a8ffc1;
+    margin-top: 8px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+.header-info {
+    display: flex;
+    gap: 35px; /* Больше отступ */
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* Больше отступ */
+    font-size: 1.05rem; /* Крупнее */
+    color: #c8ffd9;
+    font-weight: 500;
+}
+
+.info-item i {
+    color: #4caf50;
+    font-size: 1.3rem; /* Крупнее */
+}
+
+/* Баннер события */
+.event-banner {
+    background: linear-gradient(135deg, rgba(76, 175, 80, 0.25) 0%, rgba(104, 224, 108, 0.25) 100%);
+    border-radius: 22px; /* Более округлые углы */
+    padding: 35px; /* Больше отступов */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 45px;
+    border: 2px solid rgba(76, 175, 80, 0.4); /* Толще */
+}
+
+.event-title h2 {
+    font-family: 'Rubik', sans-serif;
+    font-size: 2.5rem; /* Крупнее */
+    font-weight: 700;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 18px; /* Больше отступ */
+    color: #fff;
+    letter-spacing: 0.8px; /* Шире */
+    line-height: 1.3;
+}
+
+.event-title h2 i {
+    color: #ffeb3b;
+    font-size: 2.2rem; /* Крупнее */
+}
+
+.event-subtitle {
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.3rem; /* Крупнее */
+    color: #c8ffd9;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0.4px;
+}
+
+.event-time {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.35);
+    padding: 25px 35px; /* Больше отступов */
+    border-radius: 18px;
+    border: 3px solid #4caf50; /* Толще */
+    min-width: 180px;
+}
+
+.time-label {
+    font-size: 1rem; /* Крупнее */
+    color: #a8ffc1;
+    text-transform: uppercase;
+    letter-spacing: 3px; /* Шире */
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.time-value {
+    font-family: 'Rubik', sans-serif;
+    font-size: 3.5rem; /* Крупнее */
+    font-weight: 800;
+    color: #fff;
+    margin: 10px 0;
+    letter-spacing: 1px;
+}
+
+.time-zone {
+    font-size: 0.95rem; /* Крупнее */
+    color: #a8ffc1;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+/* Секция обратного отсчета */
+.section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+.section-title h3 {
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.8rem; /* Крупнее */
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 12px; /* Больше отступ */
+    color: #fff;
+    letter-spacing: 0.5px;
+}
+
+.section-title h3 i {
+    color: #4caf50;
+    font-size: 1.8rem; /* Крупнее */
+}
+
+.status-badge {
+    background: linear-gradient(135deg, #4caf50 0%, #8bc34a 100%);
+    padding: 12px 25px; /* Больше отступов */
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 12px; /* Больше отступ */
+    font-family: 'Rubik', sans-serif;
+    font-weight: 600;
+    font-size: 1.05rem; /* Крупнее */
+    color: #fff;
+    letter-spacing: 0.5px;
+}
+
+.status-badge i {
+    font-size: 1.2rem; /* Крупнее */
+}
+
+/* Таймер */
+.countdown-display {
+    background: rgba(10, 46, 29, 0.75);
+    border-radius: 22px; /* Более округлые углы */
+    padding: 45px; /* Больше отступов */
+    margin-bottom: 45px;
+    border: 2px solid rgba(76, 175, 80, 0.3); /* Толще */
+}
+
+.countdown-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px; /* Больше отступ */
+    margin-bottom: 45px;
+}
+
+.countdown-item {
+    text-align: center;
+    flex: 1;
+    max-width: 220px; /* Шире */
+}
+
+.countdown-number {
+    font-family: 'Rubik', sans-serif;
+    font-size: 5.2rem; /* Крупнее */
+    font-weight: 800;
+    background: linear-gradient(135deg, #4caf50 0%, #8bc34a 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    height: 120px; /* Выше */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+    letter-spacing: 2px; /* Шире */
+    text-shadow: 0 0 35px rgba(76, 175, 80, 0.6); /* Ярче свечение */
+}
+
+.countdown-label {
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.15rem; /* Крупнее */
+    color: #c8ffd9;
+    text-transform: uppercase;
+    letter-spacing: 3.5px; /* Шире */
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Больше отступ */
+    font-weight: 600;
+}
+
+.countdown-label i {
+    font-size: 1.4rem; /* Крупнее */
+    color: #4caf50;
+}
+
+.countdown-progress {
+    height: 10px; /* Толще */
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #4caf50 0%, #8bc34a 100%);
+    width: 0%;
+    border-radius: 5px;
+}
+
+.countdown-separator {
+    font-family: 'Rubik', sans-serif;
+    font-size: 3.8rem; /* Крупнее */
+    font-weight: 800;
+    color: #4caf50;
+    margin-top: -40px;
+    letter-spacing: 2px; /* Шире */
+}
+
+.countdown-total {
+    display: flex;
+    justify-content: space-around;
+    background: rgba(0, 0, 0, 0.25);
+    padding: 25px; /* Больше отступов */
+    border-radius: 18px;
+    border: 2px solid rgba(76, 175, 80, 0.2); /* Толще */
+}
+
+.total-item {
+    text-align: center;
+    padding: 0 20px;
+}
+
+.total-item span {
+    display: block;
+    color: #a8ffc1;
+    font-size: 1.05rem; /* Крупнее */
+    margin-bottom: 8px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.total-item strong {
+    font-family: 'Rubik', sans-serif;
+    font-size: 2rem; /* Крупнее */
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* Детали мероприятия */
+.event-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Шире карточки */
+    gap: 30px; /* Больше отступ */
+    margin-bottom: 45px;
+}
+
+.details-card {
+    background: rgba(10, 46, 29, 0.75);
+    border-radius: 18px;
+    padding: 28px; /* Больше отступов */
+    border: 2px solid rgba(76, 175, 80, 0.25); /* Толще */
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 18px; /* Больше отступ */
+    margin-bottom: 22px;
+    padding-bottom: 18px;
+    border-bottom: 2px solid rgba(76, 175, 80, 0.25); /* Толще */
+}
+
+.card-header i {
+    font-size: 1.8rem; /* Крупнее */
+    color: #4caf50;
+}
+
+.card-header h4 {
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.4rem; /* Крупнее */
+    font-weight: 600;
+    color: #fff;
+    letter-spacing: 0.5px;
+}
+
+.disciplines-list {
+    list-style: none;
+}
+
+.disciplines-list li {
+    padding: 12px 0; /* Больше отступов */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    align-items: center;
+    gap: 12px; /* Больше отступ */
+    color: #e8f5e9;
+    font-size: 1.1rem; /* Крупнее */
+    line-height: 1.5;
+    letter-spacing: 0.3px;
+}
+
+.disciplines-list li:last-child {
+    border-bottom: none;
+}
+
+.disciplines-list li i {
+    color: #4caf50;
+    width: 22px; /* Шире */
+    font-size: 1.2rem; /* Крупнее */
+}
+
+.prize-info {
+    display: flex;
+    flex-direction: column;
+    gap: 18px; /* Больше отступ */
+}
+
+.prize-item {
+    display: flex;
+    align-items: center;
+    gap: 22px; /* Больше отступ */
+    padding: 18px; /* Больше отступов */
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+}
+
+.prize-place {
+    font-size: 2.8rem; /* Крупнее */
+}
+
+.prize-place.gold { color: #ffd700; }
+.prize-place.silver { color: #c0c0c0; }
+.prize-place.bronze { color: #cd7f32; }
+
+.prize-title {
+    font-family: 'Rubik', sans-serif;
+    font-size: 1rem; /* Крупнее */
+    color: #a8ffc1;
+    text-transform: uppercase;
+    letter-spacing: 1.5px; /* Шире */
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+.prize-value {
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.7rem; /* Крупнее */
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.5px;
+}
+
+.participants-info {
+    text-align: center;
+}
+
+.participant-count {
+    margin-bottom: 22px;
+}
+
+.count-number {
+    font-family: 'Rubik', sans-serif;
+    font-size: 3.5rem; /* Крупнее */
+    font-weight: 800;
+    color: #4caf50;
+    margin-bottom: 6px;
+    letter-spacing: 1.5px; /* Шире */
+}
+
+.count-label {
+    font-family: 'Rubik', sans-serif;
+    color: #c8ffd9;
+    font-size: 1.05rem; /* Крупнее */
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.participant-regions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px; /* Больше отступ */
+    justify-content: center;
+}
+
+.region-tag {
+    background: rgba(76, 175, 80, 0.25);
+    padding: 8px 18px; /* Больше отступов */
+    border-radius: 50px;
+    font-size: 0.95rem; /* Крупнее */
+    border: 1px solid rgba(76, 175, 80, 0.4); /* Толще */
+    color: #e8f5e9;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+
+/* Информация о времени */
+.time-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Шире */
+    gap: 30px; /* Больше отступ */
+    margin-bottom: 45px;
+}
+
+.current-time, .target-time {
+    background: rgba(10, 46, 29, 0.75);
+    border-radius: 18px;
+    padding: 28px; /* Больше отступов */
+    border: 2px solid rgba(76, 175, 80, 0.25); /* Толще */
+}
+
+.current-time h4, .target-time h4 {
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.4rem; /* Крупнее */
+    margin-bottom: 22px;
+    display: flex;
+    align-items: center;
+    gap: 12px; /* Больше отступ */
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.current-time h4 i, .target-time h4 i {
+    color: #4caf50;
+    font-size: 1.5rem; /* Крупнее */
+}
+
+.time-display {
+    font-family: 'Rubik', sans-serif;
+    font-size: 2.8rem; /* Крупнее */
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 12px;
+    letter-spacing: 0.8px; /* Шире */
+}
+
+.date-display {
+    font-family: 'Rubik', sans-serif;
+    color: #c8ffd9;
+    font-size: 1.2rem; /* Крупнее */
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+
+.target-date {
+    font-family: 'Rubik', sans-serif;
+    font-size: 2rem; /* Крупнее */
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+}
+
+.target-location {
+    font-family: 'Rubik', sans-serif;
+    color: #c8ffd9;
+    font-size: 1.1rem; /* Крупнее */
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+
+/* Мотивационная секция */
+.motivation-section {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px; /* Больше отступ */
+    margin-bottom: 45px;
+}
+
+.motivation-card {
+    background: linear-gradient(135deg, rgba(76, 175, 80, 0.25) 0%, rgba(104, 224, 108, 0.25) 100%);
+    border-radius: 18px;
+    padding: 35px; /* Больше отступов */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: 2px solid rgba(76, 175, 80, 0.4); /* Толще */
+}
+
+.motivation-card i:first-child {
+    align-self: flex-start;
+    color: #4caf50;
+    font-size: 1.8rem; /* Крупнее */
+    margin-bottom: -25px;
+}
+
+.motivation-card i:last-child {
+    align-self: flex-end;
+    color: #4caf50;
+    font-size: 1.8rem; /* Крупнее */
+    margin-top: -25px;
+}
+
+.motivation-card p {
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.5rem; /* Крупнее */
+    font-weight: 400;
+    line-height: 1.8; /* Лучшая читаемость */
+    color: #fff;
+    padding: 0 22px;
+    letter-spacing: 0.4px;
+}
+
+/* Погода */
+.weather-info {
+    background: rgba(10, 46, 29, 0.75);
+    border-radius: 18px;
+    padding: 28px; /* Больше отступов */
+    display: flex;
+    align-items: center;
+    gap: 22px; /* Больше отступ */
+    border: 2px solid rgba(76, 175, 80, 0.25); /* Толще */
+}
+
+.weather-icon {
+    font-size: 3.8rem; /* Крупнее */
+}
+
+.weather-details {
+    flex: 1;
+}
+
+.weather-temp {
+    font-family: 'Rubik', sans-serif;
+    font-size: 2.5rem; /* Крупнее */
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 6px;
+    letter-spacing: 0.5px;
+}
+
+.weather-condition, .weather-wind {
+    font-family: 'Rubik', sans-serif;
+    color: #c8ffd9;
+    font-size: 1.05rem; /* Крупнее */
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+
+.weather-update {
+    font-family: 'Rubik', sans-serif;
+    color: #a5d6a7;
+    font-size: 0.95rem; /* Крупнее */
+    margin-top: 8px;
+    letter-spacing: 0.2px;
+}
+
+/* Футер */
+.footer {
+    border-top: 2px solid rgba(76, 175, 80, 0.4); /* Толще */
+    padding-top: 35px;
+    margin-top: 45px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 25px; /* Больше отступ */
+    margin-bottom: 22px;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* Больше отступ */
+    font-weight: 600;
+    color: #c8ffd9;
+    font-size: 1.2rem; /* Крупнее */
+    letter-spacing: 0.5px;
+}
+
+.footer-icon {
+    font-size: 1.8rem; /* Крупнее */
+}
+
+.footer-links {
+    display: flex;
+    gap: 28px; /* Больше отступ */
+}
+
+.footer-links a {
+    font-family: 'Rubik', sans-serif;
+    color: #c8ffd9;
+    text-decoration: none;
+    font-size: 1.05rem; /* Крупнее */
+    display: flex;
+    align-items: center;
+    gap: 6px; /* Больше отступ */
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    /* Без эффектов наведения */
+}
+
+.footer-update {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Больше отступ */
+    color: #a8edea;
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.05rem; /* Крупнее */
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+
+.footer-update i {
+    color: #4caf50;
+    font-size: 1.2rem; /* Крупнее */
+}
+
+.footer-copyright {
+    font-family: 'Rubik', sans-serif;
+    text-align: center;
+    color: #a8ffc1;
+    font-size: 1.05rem; /* Крупнее */
+    padding: 22px 0;
+    border-top: 2px solid rgba(76, 175, 80, 0.2); /* Толще */
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+
+/* Адаптивность с учетом увеличенных размеров */
+@media (max-width: 1100px) {
+    .container {
+        max-width: 95%;
+        padding: 20px;
+    }
+    
+    .countdown-number {
+        font-size: 4.2rem;
+        height: 100px;
+    }
+    
+    .countdown-separator {
+        font-size: 3rem;
+        margin-top: -30px;
+    }
+}
+
+@media (max-width: 900px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 25px;
+    }
+    
+    .header-info {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .event-banner {
+        flex-direction: column;
+        gap: 25px;
+        text-align: center;
+    }
+    
+    .countdown-grid {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    
+    .countdown-item {
+        max-width: calc(50% - 20px);
+    }
+    
+    .countdown-separator {
+        display: none;
+    }
+    
+    .motivation-section {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    
+    .footer-links {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+    }
+    
+    .logo-text h1 {
+        font-size: 1.8rem;
+    }
+    
+    .event-title h2 {
+        font-size: 1.9rem;
+    }
+    
+    .time-value {
+        font-size: 2.8rem;
+    }
+    
+    .countdown-number {
+        font-size: 3.2rem;
+        height: 80px;
+        letter-spacing: 1px;
+    }
+    
+    .countdown-label {
+        font-size: 1rem;
+        letter-spacing: 2px;
+    }
+    
+    .event-details {
+        grid-template-columns: 1fr;
+    }
+    
+    .info-item {
+        font-size: 0.95rem;
+    }
+}
